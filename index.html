@@ -12,7 +12,8 @@
       padding: 0;
       box-sizing: border-box;
     }
-    :root{
+
+    :root {
       --button-height: 32px;
       --button-bg: white;
       --button-active-bg: #eeeeee;
@@ -23,14 +24,26 @@
       --border-color-hover: #666666;
     }
   </style>
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    <g-button></g-button>
+    <g-button icon="setting" icon-position="right">
+      按钮
+    </g-button>
+    <g-button icon="setting" icon-position="">
+      按钮
+    </g-button>
   </div>
 
-  <script src="./src/app.js"></script>
+  <script src="./src/app.js "></script>
+  <script src="//at.alicdn.com/t/font_738071_d3vf89rhzxq.js"></script>
 </body>
 
 </html>
