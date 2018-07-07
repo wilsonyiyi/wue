@@ -1,0 +1,22 @@
+{
+  "name": "gulu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Willworkgogogo/gulu.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Will",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Willworkgogogo/gulu/issues"
+  },
+  "homepage": "https://github.com/Willworkgogogo/gulu#readme"
+}
