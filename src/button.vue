@@ -1,8 +1,6 @@
 <template>
   <button class="g-button" :class="iconPos">
-    <svg class="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <g-icon :name="icon"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -13,7 +11,13 @@
 export default {
   props: {
     icon: String,
-    iconPosition: String
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator: function (value) {
+        return value === 'left' || value === 'right'
+      }
+    }
   },
   computed: {
     iconPos: function () {
@@ -29,7 +33,6 @@ export default {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-  margin: 20px;
   padding: 0 1em;
   height: var(--button-height);
   color: var(--color);
