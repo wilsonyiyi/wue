@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <button class="g-button" :class="iconPos">
-      <svg class="icon">
-        <use :xlink:href="`#i-${icon}`"></use>
-      </svg>
-      <div class="content">
-        <slot></slot>
-      </div>
-    </button>
-  </div>
+  <button class="g-button" :class="iconPos">
+    <svg class="icon">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script type="text/ecmascript-6">
@@ -30,6 +28,7 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
   margin: 20px;
   padding: 0 1em;
   height: var(--button-height);
@@ -48,11 +47,11 @@ export default {
     outline: none;
   }
   > {
-    .icon{order: 1};
+    .icon{order: 1; margin-right: 0.1em;};
     .content{order: 2};
   }
   &.icon-right{
-    .icon{order: 2};
+    .icon{order: 2; margin-right: 0; margin-left: 0.1em;};
     .content{order: 1};
   }
 }
