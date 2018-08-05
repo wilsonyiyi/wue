@@ -1,53 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-    * {
+    *{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-    body {
-      padding: 20px;
-    }
-
-    :root {
+    :root{
       --button-height: 32px;
-      --button-bg: white;
-      --button-active-bg: #eeeeee;
       --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
       --border-radius: 4px;
-      --color: #333333;
-      --border-color: #999999;
-      --border-color-hover: #666666;
+      --color: #333;
+      --border-color: #999;
+      --border-hover-color: #666;
+    }
+    body{
+      margin: 20px;
+    }
+    #app{
+      font-size: var(--font-size);
     }
   </style>
   <style>
-    .icon {
-      width: 1em;
-      height: 1em;
+    .g-button{
+      height: var(--button-height);
+      font-size: var(--font-size);
+      padding: 0 1em;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      background: var(--button-bg);
+    }
+    .g-button:active{
+      background: var(--button-active-bg);
+    }
+    .g-button:hover{
+      border-color: var(--border-hover-color);
+    }
+    .g-button:focus{
+      outline: none;
     }
   </style>
 </head>
-
 <body>
   <div id="app">
-    <g-button icon="setting" :loading=loading2 @click="loading2 = !loading2">
-      按钮
-    </g-button>
-    <g-button icon="setting" icon-position="right" :loading=loading1 @click="loading1 = !loading1">
-      按钮
-    </g-button>
+    <g-button></g-button>
   </div>
-
-  <script src="./src/app.js "></script>
-  <script src="//at.alicdn.com/t/font_738071_cieeej0gu2t.js"></script>
+  <script src="./node_modules/vue/dist/vue.min.js"></script>
+  <script src="./button.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+    })
+  </script>
 </body>
-
 </html>
