@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html --no-cache"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "@vue/component-compiler-utils": "^2.1.0",
     "node-sass": "^4.9.1",
     "parcel-bundler": "^1.9.7",
+    "stylus": "^0.54.5",
     "vue-template-compiler": "^2.5.16"
   },
   "alias": {
