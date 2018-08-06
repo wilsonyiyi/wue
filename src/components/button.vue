@@ -1,7 +1,7 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
-    <g-icon class="icon" v-if="!loading" :name="icon"></g-icon>
-    <g-icon class="icon loading" name="loading" v-if="loading"></g-icon>
+  <button class="w-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <w-icon class="icon" v-if="!loading" :name="icon"></w-icon>
+    <w-icon class="icon loading" name="loading" v-if="loading"></w-icon>
     <slot></slot>
   </button>
 </template>
@@ -26,7 +26,7 @@
 </script>
 
 <style lang="scss">
-  .g-button {
+  .w-button {
     display: inline-flex;
     justify-content: center;
     align-items: center;

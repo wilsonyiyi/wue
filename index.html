@@ -32,18 +32,26 @@
 </head>
 <body>
   <div id="app">
-    <g-button>
-      安妮多大
-    </g-button>
-    <g-button icon="setting">
-      安妮多大
-    </g-button>
-    <g-button icon="setting" icon-position="right" :loading="true">
-      安妮多大
-    </g-button>
-    <g-button icon="setting" :loading="loading1" @click="loading1 = !loading1">
-      加载中
-    </g-button>
+    <w-button>
+      无图标按钮
+    </w-button>
+    <w-button icon="setting">
+      左图标按钮
+    </w-button>
+    <w-button icon="setting" icon-position="right">
+      右图标按钮
+    </w-button>
+    <w-button icon="setting" :loading="loading1" @click="loading1 = !loading1">
+      点击切换loading
+    </w-button>
+
+    <div style="margin-top: 20px">
+      <w-button-group>
+        <w-button icon="left">上一页</w-button>
+        <w-button>更多</w-button>
+        <w-button icon="right" icon-position="right">下一页</w-button>
+      </w-button-group>
+    </div>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_738071_qup1plk9ql.js"></script>

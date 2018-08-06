@@ -1,5 +1,5 @@
 <template>
-  <svg v-if="name" class="g-icon">
+  <svg v-if="name" class="w-icon">
     <use :xlink:href="`#i-${name}`"></use>
   </svg>
 </template>
@@ -16,7 +16,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .g-icon{
+  .w-icon{
     width: 1em;
     height: 1em;
   }
