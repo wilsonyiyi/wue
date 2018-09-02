@@ -7,7 +7,9 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import WIcon from './icon'
   export default  {
+  	components: {WIcon},
   	props: {
   		icon: {},
       loading: {

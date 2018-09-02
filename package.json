@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html --no-cache"
+    "start": "parcel index.html --no-cache",
+    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "test": "parcel build test/* --no-catch --no-minify && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,7 @@
     "mocha": "^5.2.0",
     "node-sass": "^4.9.1",
     "parcel-bundler": "^1.9.7",
-    "sinon": "^6.1.4",
+    "sinon": "^6.1.5",
     "sinon-chai": "^3.2.0",
     "stylus": "^0.54.5",
     "vue-template-compiler": "^2.5.16"

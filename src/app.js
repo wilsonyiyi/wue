@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Button from './components/button'
-import GIcon from './components/icon'
+import WIcon from './components/icon'
 import WButtonGroup from './components/button-group'
 
 Vue.component('w-button', Button)
-Vue.component('w-icon', GIcon)
+Vue.component('w-icon', WIcon)
 Vue.component('w-button-group', WButtonGroup)
 
 new Vue({
@@ -17,6 +17,7 @@ new Vue({
 import chai from 'chai'
 import spies from 'chai-spies' // 用于函数监听调用
 chai.use(spies)
+
 const expect = chai.expect
 
 // test icon
