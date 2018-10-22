@@ -1,5 +1,7 @@
 # vue coponent
 
+[![Build Status](https://travis-ci.com/Willworkgogogo/gulu.svg?branch=master)](https://travis-ci.com/Willworkgogogo/gulu)
+
 ## 介绍
 
 ## 开始使用
