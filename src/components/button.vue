@@ -9,6 +9,7 @@
 <script type="text/ecmascript-6">
   import WIcon from './icon'
   export default  {
+  	name: 'VVButton',
   	components: {WIcon},
   	props: {
   		icon: {},
@@ -27,7 +28,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .w-button {
     display: inline-flex;
     justify-content: center;

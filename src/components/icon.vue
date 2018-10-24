@@ -6,7 +6,7 @@
 
 <script type="text/ecmascript-6">
   export default {
-  	namespace: 'components-icon',
+  	name: 'VVIcon',
     props: {
   		name: {
   			type: String
@@ -15,7 +15,7 @@
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="scss" scoped>
   .w-icon{
     width: 1em;
     height: 1em;

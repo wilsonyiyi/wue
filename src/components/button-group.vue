@@ -5,10 +5,12 @@
 </template>
 
 <script type="text/ecmascript-6">
-  export default {}
+  export default {
+  	name: 'VVButtonGroup',
+  }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="scss" scoped>
   .w-button-group{
     display: inline-flex;
     vertical-align: middle;
@@ -26,7 +28,7 @@
         border-bottom-right-radius: var(--border-radius);
       }
       &:hover{
-        position relative;
+        position: relative;
         z-index: 1;
       }
     }
