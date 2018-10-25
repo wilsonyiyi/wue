@@ -63,7 +63,14 @@
       <w-input value="王五" disabled></w-input>
     </div>
     <div class="box">
+      <w-input value="天王" @change="inputChange"></w-input>
+    </div>
+    <div class="box">
       <w-input value="天王" error="请填写正确信息"></w-input>
+    </div>
+    <div class="box">
+      <w-input v-model="message"></w-input>
+      <span>{{message}}</span>
     </div>
   </div>
   <script src="./src/app.js"></script>
