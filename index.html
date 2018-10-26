@@ -31,6 +31,9 @@
     .box{
       margin-top: 20px;
     }
+    .box-row{
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
@@ -71,6 +74,55 @@
     <div class="box">
       <w-input v-model="message"></w-input>
       <span>{{message}}</span>
+    </div>
+
+    <!-- 栅格系统 -->
+    <div class="box">
+      <!--<w-row class="box-row">-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+      <!--</w-row>-->
+      <!--<w-row class="box-row">-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+      <!--</w-row>-->
+      <!--<w-row class="box-row">-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+      <!--</w-row>-->
+      <!--<w-row class="box-row">-->
+        <!--<w-col span="2"></w-col>-->
+        <!--<w-col span="22"></w-col>-->
+      <!--</w-row>-->
+      <!--<w-row class="box-row">-->
+        <!--<w-col span="6"></w-col>-->
+        <!--<w-col span="7" offset="2"></w-col>-->
+        <!--<w-col span="7" offset="2"></w-col>-->
+      <!--</w-row>-->
+      <!--<w-row class="box-row">-->
+        <!--<w-col>1</w-col>-->
+        <!--<w-col>2</w-col>-->
+        <!--<w-col>3</w-col>-->
+        <!--<w-col>4</w-col>-->
+      <!--</w-row>-->
+      <w-row class="box-row" gutter="16">
+        <w-col></w-col>
+        <w-col></w-col>
+      </w-row>
+      <!--<w-row class="box-row">-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+      <!--</w-row>-->
+      <!--<w-row class="box-row">-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+        <!--<w-col></w-col>-->
+      <!--</w-row>-->
     </div>
   </div>
   <script src="./src/app.js"></script>

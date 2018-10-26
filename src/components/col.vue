@@ -1,6 +1,8 @@
 <template>
-  <div class="col" :class="">
-    <slot></slot>
+  <div class="col" :class="colClass" :style="colStyle">
+    <div style="border: 1px solid green; height: 100%; width: 100%;">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -8,18 +10,49 @@
 	export default {
 		name: 'VVCol',
 		props: {
-			span: [Number, String]
-		}
+			span: {
+				type: [Number, String]
+      },
+      offset: {
+				type: [Number, String]
+      }
+		},
+    data() {
+			return {
+				gutter: 0
+      }
+    },
+    computed: {
+			colClass() {
+				return [this.span && `col-${this.span}`, this.offset && `offset-${this.offset}`]
+      },
+      colStyle() {
+				return this.gutter ? {
+					paddingLeft: this.gutter/2 + 'px',
+          paddingRight: this.gutter/2 + 'px'
+        } : {}
+      }
+    }
 	}
 </script>
 
 <style lang="scss" scoped>
-  $background-color: rgba(0, 160, 233, 0.7);
-  $class_prefix: 'col_';
   .col {
     height: 100%;
-    background: $background-color;
     width: 100%;
-    border: 1px solid #ccc;
+    display: inline-flex;
+    align-items: center;
+  }
+  $class_prefix: 'col-';
+  @for $i from 1 through 24 {
+    &.#{$class_prefix}#{$i} {
+      width: $i/24 * 100%;
+    }
+  }
+  $class_prefix: 'offset-';
+  @for $i from 1 through 24 {
+    &.#{$class_prefix}#{$i} {
+      margin-left: $i/24 * 100%;
+    }
   }
 </style>
