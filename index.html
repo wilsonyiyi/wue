@@ -39,42 +39,42 @@
 <body>
   <div id="app" class="box">
     <!--button component-->
-    <w-button>
-      无图标按钮
-    </w-button>
-    <w-button icon="setting">
-      左图标按钮
-    </w-button>
-    <w-button icon="setting" icon-position="right">
-      右图标按钮
-    </w-button>
-    <w-button icon="setting" :loading="loading1" @click="loading1 = !loading1">
-      点击切换loading
-    </w-button>
-    <div class="box">
-      <w-button-group>
-        <w-button icon="left">上一页</w-button>
-        <w-button>更多</w-button>
-        <w-button icon="right" icon-position="right">下一页</w-button>
-      </w-button-group>
-    </div>
+    <!--<w-button>-->
+      <!--无图标按钮-->
+    <!--</w-button>-->
+    <!--<w-button icon="setting">-->
+      <!--左图标按钮-->
+    <!--</w-button>-->
+    <!--<w-button icon="setting" icon-position="right">-->
+      <!--右图标按钮-->
+    <!--</w-button>-->
+    <!--<w-button icon="setting" :loading="loading1" @click="loading1 = !loading1">-->
+      <!--点击切换loading-->
+    <!--</w-button>-->
+    <!--<div class="box">-->
+      <!--<w-button-group>-->
+        <!--<w-button icon="left">上一页</w-button>-->
+        <!--<w-button>更多</w-button>-->
+        <!--<w-button icon="right" icon-position="right">下一页</w-button>-->
+      <!--</w-button-group>-->
+    <!--</div>-->
 
     <!-- input component -->
-    <div class="box">
-      <w-input value="张三"></w-input>
-      <w-input value="李四" readonly></w-input>
-      <w-input value="王五" disabled></w-input>
-    </div>
-    <div class="box">
-      <w-input value="天王" @change="inputChange"></w-input>
-    </div>
-    <div class="box">
-      <w-input value="天王" error="请填写正确信息"></w-input>
-    </div>
-    <div class="box">
-      <w-input v-model="message"></w-input>
-      <span>{{message}}</span>
-    </div>
+    <!--<div class="box">-->
+      <!--<w-input value="张三"></w-input>-->
+      <!--<w-input value="李四" readonly></w-input>-->
+      <!--<w-input value="王五" disabled></w-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+      <!--<w-input value="天王" @change="inputChange"></w-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+      <!--<w-input value="天王" error="请填写正确信息"></w-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+      <!--<w-input v-model="message"></w-input>-->
+      <!--<span>{{message}}</span>-->
+    <!--</div>-->
 
     <!-- 栅格系统 -->
     <div class="box">
@@ -109,8 +109,8 @@
         <!--<w-col>4</w-col>-->
       <!--</w-row>-->
       <w-row class="box-row" gutter="16">
-        <w-col></w-col>
-        <w-col></w-col>
+        <w-col>1</w-col>
+        <w-col>2</w-col>
       </w-row>
       <!--<w-row class="box-row">-->
         <!--<w-col></w-col>-->

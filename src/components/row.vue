@@ -14,10 +14,10 @@
     },
     computed: {
   		rowStyle() {
-			  console.log(this.gutter);
-			  return this.gutter ? {
-  				marginLeft: -`${this.gutter/2}px`,
-          marginRight: -`${this.gutter/2}px`
+  			let {gutter} = this
+			  return gutter? {
+  				marginLeft: `-${gutter/2}px`,
+          marginRight: `-${gutter/2}px`
   			} : {}
       }
     },
