@@ -9,7 +9,7 @@
 <script type="text/ecmascript-6">
   import WIcon from './icon'
   export default  {
-  	name: 'VVButton',
+  	name: 'WButton',
   	components: {WIcon},
   	props: {
   		icon: {},

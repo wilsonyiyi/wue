@@ -6,7 +6,7 @@
 
 <script type="text/ecmascript-6">
 	export default {
-		name: 'VVCol',
+		name: 'WCol',
 		props: {
 			span: {
 				type: [Number, String]

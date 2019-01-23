@@ -6,7 +6,7 @@
 
 <script type="text/ecmascript-6">
   export default {
-  	name: 'VVRow',
+  	name: 'WRow',
     props: {
       gutter: {
       	type: [Number, String]
@@ -23,7 +23,6 @@
     },
     mounted() {
 	    this.$children.forEach(vm => {
-		    console.log(vm);
 		    vm.gutter = this.gutter
 	    })
     }

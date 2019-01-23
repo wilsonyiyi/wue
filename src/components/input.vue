@@ -16,7 +16,7 @@
 <script type="text/ecmascript-6">
   import Icon from './icon'
 	export default {
-		name: 'VVInput',
+		name: 'WInput',
     components: {Icon},
     props: {
 			value: {
