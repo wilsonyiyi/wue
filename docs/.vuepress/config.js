@@ -1,11 +1,32 @@
+function getComponents(componentsFile) {
+	return componentsFile.map(name => `/components/${name}`);
+}
+
+const componentsFile = ['button'];
+
 module.exports = {
 	title: 'VVui',
-	description: '一款基于Vue的简洁的UI组件库',
-	base: '/gulu/',
+	description: '一款基于Vue的简洁的UI组件库，我是闹着玩的',
+	base: '/wue/',
 	themeConfig: {
 		nav: [
-			{ text: 'Home', link: '/' },
-			{ text: 'Github', link: 'https://github.com/willworkgogogo' },
+			{ text: '文档', link: '/introduce.html' },
+			{ text: 'Github', link: 'https://github.com/willworkgogogo/wue' }
+		],
+		sidebar: [
+			{
+				title: '基础',
+				collapsable: false,
+				children: ['/introduce', '/about', '/contact']
+			},
+			{
+				title: '组件',
+				collapsable: false,
+				children: getComponents(componentsFile)
+			}
 		]
+	},
+	markdown: {
+		lineNumbers: true
 	}
-}
+};
