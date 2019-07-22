@@ -7,8 +7,9 @@
 		"start": "parcel index.html --no-cache",
 		"dev:test": "parcel watch test/* --no-cache & karma start",
 		"test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
-		"docs:dev": "vuepress dev docs",
-		"docs:build": "vuepress build docs"
+		"d:d": "vuepress dev docs",
+		"docs:build": "vuepress build docs",
+		"gh-pages": "gh-pages ./docs/.vuepress/dist/"
 	},
 	"repository": {
 		"type": "git",
@@ -31,6 +32,7 @@
 		"@vue/component-compiler-utils": "^2.6.0",
 		"chai": "^4.2.0",
 		"chai-spies": "^1.0.0",
+		"gh-pages": "^2.0.1",
 		"karma": "^2.0.5",
 		"karma-chai": "^0.1.0",
 		"karma-chai-spies": "^0.1.4",
@@ -40,6 +42,7 @@
 		"mocha": "^5.2.0",
 		"node-sass": "^4.12.0",
 		"parcel-bundler": "^1.12.3",
+		"sass-loader": "^7.1.0",
 		"sinon": "^6.3.5",
 		"sinon-chai": "^3.3.0",
 		"stylus": "^0.54.5",
