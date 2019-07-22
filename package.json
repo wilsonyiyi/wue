@@ -9,7 +9,7 @@
 		"test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
 		"d:d": "vuepress dev docs",
 		"docs:build": "vuepress build docs",
-		"gh-pages": "gh-pages ./docs/.vuepress/dist/"
+		"gh-pages": "gh-pages -d ./docs/.vuepress/dist/"
 	},
 	"repository": {
 		"type": "git",
