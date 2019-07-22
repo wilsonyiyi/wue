@@ -12,7 +12,9 @@ export default {
 	name: 'WButton',
 	components: { WIcon },
 	props: {
-		icon: {},
+		icon: {
+			type: String
+		},
 		loading: {
 			type: Boolean,
 			default: false
