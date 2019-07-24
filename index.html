@@ -1,131 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html{
-      --button-height: 32px;
-      --font-size: 14px;
-      --button-bg: white;
-      --button-active-bg: #eee;
-      --border-radius: 4px;
-      --color: #333;
-      --border-color: #999;
-      --border-hover-color: #666;
-    }
-    body{
-      margin: 20px;
-    }
-    #app{
-      font-size: var(--font-size);
-    }
-    .box{
-      margin-top: 20px;
-    }
-    .box-row{
-      margin: 5px 0;
-    }
-  </style>
-</head>
-<body>
-  <div id="app" class="box">
-    <!--button component-->
-    <!--<w-button>-->
-      <!--无图标按钮-->
-    <!--</w-button>-->
-    <!--<w-button icon="setting">-->
-      <!--左图标按钮-->
-    <!--</w-button>-->
-    <w-button icon="setting" icon-position="right">
-      右图标按钮
-    </w-button>
-    <!--<w-button icon="setting" :loading="loading1" @click="loading1 = !loading1">-->
-      <!--点击切换loading-->
-    <!--</w-button>-->
-    <!--<div class="box">-->
-      <!--<w-button-group>-->
-        <!--<w-button icon="left">上一页</w-button>-->
-        <!--<w-button>更多</w-button>-->
-        <!--<w-button icon="right" icon-position="right">下一页</w-button>-->
-      <!--</w-button-group>-->
-    <!--</div>-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-    <!-- input component -->
-    <!--<div class="box">-->
-      <!--<w-input value="张三"></w-input>-->
-      <!--<w-input value="李四" readonly></w-input>-->
-      <!--<w-input value="王五" disabled></w-input>-->
-    <!--</div>-->
-    <!--<div class="box">-->
-      <!--<w-input value="天王" @change="inputChange"></w-input>-->
-    <!--</div>-->
-    <!--<div class="box">-->
-      <!--<w-input value="天王" error="请填写正确信息"></w-input>-->
-    <!--</div>-->
-    <!--<div class="box">-->
-      <!--<w-input v-model="message"></w-input>-->
-      <!--<span>{{message}}</span>-->
-    <!--</div>-->
+			html {
+				--button-height: 32px;
+				--font-size: 14px;
+				--button-bg: white;
+				--button-active-bg: #eee;
+				--border-radius: 4px;
+				--color: #333;
+				--border-color: #999;
+				--border-hover-color: #666;
+			}
 
-    <!-- 栅格系统 -->
-    <div class="box">
-      <!--<w-row class="box-row">-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-      <!--</w-row>-->
-      <!--<w-row class="box-row">-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-      <!--</w-row>-->
-      <!--<w-row class="box-row">-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-      <!--</w-row>-->
-      <!--<w-row class="box-row">-->
-        <!--<w-col span="2"></w-col>-->
-        <!--<w-col span="22"></w-col>-->
-      <!--</w-row>-->
-      <!--<w-row class="box-row">-->
-        <!--<w-col span="6"></w-col>-->
-        <!--<w-col span="7" offset="2"></w-col>-->
-        <!--<w-col span="7" offset="2"></w-col>-->
-      <!--</w-row>-->
-      <w-row class="box-row" gutter="16">
-        <w-col>1</w-col>
-        <w-col>2</w-col>
-        <w-col>3</w-col>
-        <w-col>4</w-col>
-      </w-row>
-      <w-row class="box-row" gutter="16">
-        <w-col>1</w-col>
-        <w-col>2</w-col>
-      </w-row>
-      <!--<w-row class="box-row">-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-      <!--</w-row>-->
-      <!--<w-row class="box-row">-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-        <!--<w-col></w-col>-->
-      <!--</w-row>-->
-    </div>
-  </div>
-  <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_738071_kccqzjcsgog.js"></script>
-</body>
+			body {
+				margin: 20px;
+			}
+
+			#app {
+				font-size: var(--font-size);
+			}
+
+			.box {
+				margin-top: 20px;
+			}
+
+			.box-row {
+				margin: 5px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app" class="box">
+			<!--button component-->
+			<!--<w-button>-->
+			<!--无图标按钮-->
+			<!--</w-button>-->
+			<!--<w-button icon="setting">-->
+			<!--左图标按钮-->
+			<!--</w-button>-->
+			<w-button icon="setting" icon-position="right">
+				右图标按钮
+			</w-button>
+			<!--<w-button icon="setting" :loading="loading1" @click="loading1 = !loading1">-->
+			<!--点击切换loading-->
+			<!--</w-button>-->
+			<!--<div class="box">-->
+			<!--<w-button-group>-->
+			<!--<w-button icon="left">上一页</w-button>-->
+			<!--<w-button>更多</w-button>-->
+			<!--<w-button icon="right" icon-position="right">下一页</w-button>-->
+			<!--</w-button-group>-->
+			<!--</div>-->
+
+			<!-- input component -->
+			<div class="box">
+			<w-input value="张三"></w-input>
+			<w-input value="李四" readonly></w-input>
+			<w-input value="王五" disabled></w-input>
+			<w-input value="哈哈" error="出错啦！！！"></w-input>
+			</div>
+			<div class="box">
+			<w-input value="天王" @change="inputChange"></w-input>
+			</div>
+			<!--<div class="box">-->
+			<!--<w-input value="天王" error="请填写正确信息"></w-input>-->
+			<!--</div>-->
+			<!--<div class="box">-->
+			<!--<w-input v-model="message"></w-input>-->
+			<!--<span>{{message}}</span>-->
+			<!--</div>-->
+
+			<!-- 栅格系统 -->
+			<div class="box">
+				<!--<w-row class="box-row">-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--</w-row>-->
+				<!--<w-row class="box-row">-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--</w-row>-->
+				<!--<w-row class="box-row">-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--</w-row>-->
+				<!--<w-row class="box-row">-->
+				<!--<w-col span="2"></w-col>-->
+				<!--<w-col span="22"></w-col>-->
+				<!--</w-row>-->
+				<!--<w-row class="box-row">-->
+				<!--<w-col span="6"></w-col>-->
+				<!--<w-col span="7" offset="2"></w-col>-->
+				<!--<w-col span="7" offset="2"></w-col>-->
+				<!--</w-row>-->
+				<w-row class="box-row" gutter="16">
+					<w-col>1</w-col>
+					<w-col>2</w-col>
+					<w-col>3</w-col>
+					<w-col>4</w-col>
+				</w-row>
+				<w-row class="box-row" gutter="16">
+					<w-col>1</w-col>
+					<w-col>2</w-col>
+				</w-row>
+				<!--<w-row class="box-row">-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--</w-row>-->
+				<!--<w-row class="box-row">-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--<w-col></w-col>-->
+				<!--</w-row>-->
+			</div>
+		</div>
+		<script src="./src/app.js"></script>
+	</body>
 </html>

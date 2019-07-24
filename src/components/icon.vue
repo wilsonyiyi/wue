@@ -5,7 +5,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-  export default {
+import './svg.js'
+export default {
   	name: 'WIcon',
     props: {
   		name: {
