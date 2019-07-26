@@ -12,7 +12,9 @@ sidebarDepth: 0
 
 ## 代码演示
 
-<button-basic></button-basic>
+<ClientOnly>
+  <button-basic />
+</ClientOnly>
 
 ```vue
 <template>
