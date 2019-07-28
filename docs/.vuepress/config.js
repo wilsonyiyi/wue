@@ -1,8 +1,12 @@
+const fs = require('fs');
+const path = require('path');
+const componentsFile = fs
+	.readdirSync(path.join(__dirname, '../components'))
+	.map(filename => filename.replace('.vue', ''));
+
 function getComponents(componentsFile) {
 	return componentsFile.map(name => `/components/${name}`);
 }
-
-const componentsFile = ['button'];
 
 module.exports = {
 	title: 'VVui',
