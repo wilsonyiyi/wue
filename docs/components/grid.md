@@ -97,13 +97,75 @@ sidebarDepth: 0
 </template>
 ```
 
+## Flex 对齐
+
+Flex 子元素垂直对齐。
+
+<ClientOnly>
+  <grid-flex />
+</ClientOnly>
+
+```vue
+<template>
+	<div class="demo">
+		<p class="title">Align Top</p>
+		<w-row justify="center" align="top">
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+		</w-row>
+		<p class="title">Align Center</p>
+		<w-row justify="space-around" align="center">
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+		</w-row>
+		<p class="title">Align Bottom</p>
+		<w-row justify="space-between" align="bottom">
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+			<w-col span="4">
+				<span>col-4</span>
+			</w-col>
+		</w-row>
+	</div>
+</template>
+```
+
 ## API
 
 ### WRow
 
-| 属性   | 说明     | 类型          | 默认值 |
-| ------ | -------- | ------------- | ------ |
-| gutter | 栅格间隔 | string/number | -      |
+| 属性    | 说明                                                                             | 类型          | 默认值 |
+| ------- | -------------------------------------------------------------------------------- | ------------- | ------ |
+| gutter  | 栅格间隔                                                                         | string/number | -      |
+| align   | flex 布局下的垂直对齐方式：`top` `middle` `bottom`                               | string        | top    |
+| justify | flex 布局下的水平排列方式：`start` `end` `center` `space-around` `space-between` | string        | start  |
 
 ### WCol
 

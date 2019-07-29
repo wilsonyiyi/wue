@@ -39,7 +39,7 @@
 import WRow from '../../../src/components/row';
 import WCol from '../../../src/components/col';
 export default {
-	name: 'GridGutter',
+	name: 'GridBasic',
 	components: { WRow, WCol }
 };
 </script>
