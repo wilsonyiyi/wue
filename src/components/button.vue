@@ -36,7 +36,7 @@ export default {
 			type: String,
 			default: 'default',
 			validator(value) {
-				return ['primary', 'danger', 'dashed'].includes(value);
+				return ['default', 'primary', 'danger', 'dashed'].includes(value);
 			}
 		}
 	}
