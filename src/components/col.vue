@@ -90,29 +90,73 @@ export default {
 <style lang="scss" scoped>
 $span_prefix: 'col-span-';
 $offset_prefix: 'col-offset-';
+@mixin getBootstrapBlock($type) {
+	$collection: ($span_prefix, $offset_prefix);
+	@each $prefix in $collection {
+		@for $i from 1 through 24 {
+			&.#{$prefix}#{$type}-#{$i} {
+				@if $prefix == $span_prefix {
+					width: $i/24 * 100%;
+				} @else {
+					margin-left: $i/24 * 100%;
+				}
+			}
+		}
+	}
+}
+@mixin calcBootstrap($type) {
+	@if $type == 'xs' {
+		@media (max-width: 575px) {
+			@include getBootstrapBlock($type);
+		}
+	}
+	@if $type == 'sm' {
+		@media (min-width: 576px) and (max-width: 767px) {
+			@include getBootstrapBlock($type);
+		}
+	}
+	@if $type == 'md' {
+		@media (min-width: 768px) and (max-width: 991px) {
+			@include getBootstrapBlock($type);
+		}
+	}
+	@if $type == 'lg' {
+		@media (min-width: 992px) and (max-width: 1199px) {
+			@include getBootstrapBlock($type);
+		}
+	}
+	@if $type == 'xl' {
+		@media (min-width: 1200px) and (max-width: 1599px) {
+			@include getBootstrapBlock($type);
+		}
+	}
+	@if $type == 'xxl' {
+		@media (min-width: 1600px) {
+			@include getBootstrapBlock($type);
+		}
+	}
+}
 .col {
 	width: 100%;
 	display: inline-flex;
 	align-items: center;
-}
-$class_prefix: 'col-';
-@for $i from 1 through 24 {
-	&.#{$class_prefix}#{$i} {
-		width: $i/24 * 100%;
-	}
-}
-$class_prefix: 'offset-';
-@for $i from 1 through 24 {
-	&.#{$class_prefix}#{$i} {
-		margin-left: $i/24 * 100%;
-	}
-}
-
-@media (max-width: 576px) {
+	$class_prefix: 'col-';
 	@for $i from 1 through 24 {
-		&.#{$span_prefix}xs-#{$i} {
+		&.#{$class_prefix}#{$i} {
 			width: $i/24 * 100%;
 		}
 	}
+	$class_prefix: 'offset-';
+	@for $i from 1 through 24 {
+		&.#{$class_prefix}#{$i} {
+			margin-left: $i/24 * 100%;
+		}
+	}
+	@include calcBootstrap('xs');
+	@include calcBootstrap('sm');
+	@include calcBootstrap('md');
+	@include calcBootstrap('lg');
+	@include calcBootstrap('xl');
+	@include calcBootstrap('xxl');
 }
 </style>
