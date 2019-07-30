@@ -5,6 +5,16 @@
 </template>
 
 <script type="text/ecmascript-6">
+const validator = value => {
+	const keys = Object.keys(value);
+	let valid = true;
+	keys.forEach(key => {
+		if (!['span', 'offset'].includes(key)) {
+			valid = false;
+		}
+	});
+	return valid;
+};
 export default {
 	name: 'WCol',
 	props: {
@@ -13,6 +23,30 @@ export default {
 		},
 		offset: {
 			type: [Number, String]
+		},
+		xs: {
+			type: Object,
+			validator
+		},
+		sm: {
+			type: Object,
+			validator
+		},
+		md: {
+			type: Object,
+			validator
+		},
+		lg: {
+			type: Object,
+			validator
+		},
+		xl: {
+			type: Object,
+			validator
+		},
+		xxl: {
+			type: Object,
+			validator
 		}
 	},
 	data() {
@@ -22,7 +56,24 @@ export default {
 	},
 	computed: {
 		colClass() {
-			return [this.span && `col-${this.span}`, this.offset && `offset-${this.offset}`];
+			const { span, offset, xs, sm, md, lg, xl, xxl } = this;
+			const bootstraps = { xs, sm, md, lg, xl, xxl };
+			const bootstrapsKeys = Object.keys(bootstraps);
+			const getClasses = type => {
+				return bootstrapsKeys.map(key => {
+					const val = bootstraps[key];
+					return val && type in val && `col-${type}-${key}-${val[type]}`;
+				});
+			};
+			const bootstrapsSpan = getClasses('span');
+			const bootstrapsOffset = getClasses('offset');
+
+			return [
+				span && `col-${span}`,
+				offset && `offset-${offset}`,
+				...bootstrapsSpan,
+				...bootstrapsOffset
+			];
 		},
 		colStyle() {
 			return this.gutter
@@ -37,6 +88,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$span_prefix: 'col-span-';
+$offset_prefix: 'col-offset-';
 .col {
 	width: 100%;
 	display: inline-flex;
@@ -52,6 +105,14 @@ $class_prefix: 'offset-';
 @for $i from 1 through 24 {
 	&.#{$class_prefix}#{$i} {
 		margin-left: $i/24 * 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	@for $i from 1 through 24 {
+		&.#{$span_prefix}xs-#{$i} {
+			width: $i/24 * 100%;
+		}
 	}
 }
 </style>
