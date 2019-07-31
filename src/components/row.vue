@@ -7,7 +7,7 @@
 <script type="text/ecmascript-6">
 const alignItemsMap = {
 	top: 'flex-start',
-	center: 'center',
+	middle: 'center',
 	bottom: 'flex-end'
 };
 export default {
@@ -56,6 +56,6 @@ export default {
 <style lang="scss" scoped>
 .row {
 	display: flex;
-	height: 50px;
+	flex-wrap: wrap;
 }
 </style>
