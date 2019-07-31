@@ -2,6 +2,7 @@ const expect = chai.expect;
 import Vue from 'vue';
 import Row from '../src/components/row';
 import Col from '../src/components/col';
+import { remove } from './util';
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
@@ -17,11 +18,6 @@ function createVm(html) {
 	});
 
 	return vm;
-}
-
-function remove(vm) {
-	vm.$el.remove();
-	vm.$destroy();
 }
 
 describe('Row', () => {
