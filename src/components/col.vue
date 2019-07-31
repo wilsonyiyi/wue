@@ -59,14 +59,14 @@ export default {
 			const { span, offset, xs, sm, md, lg, xl, xxl } = this;
 			const bootstraps = { xs, sm, md, lg, xl, xxl };
 			const bootstrapsKeys = Object.keys(bootstraps);
-			const getClasses = type => {
+			const createClasses = type => {
 				return bootstrapsKeys.map(key => {
 					const val = bootstraps[key];
 					return val && type in val && `col-${type}-${key}-${val[type]}`;
 				});
 			};
-			const bootstrapsSpan = getClasses('span');
-			const bootstrapsOffset = getClasses('offset');
+			const bootstrapsSpan = createClasses('span');
+			const bootstrapsOffset = createClasses('offset');
 
 			return [
 				span && `col-${span}`,
@@ -111,22 +111,22 @@ $offset_prefix: 'col-offset-';
 		}
 	}
 	@if $type == 'sm' {
-		@media (min-width: 576px) and (max-width: 767px) {
+		@media (min-width: 576px) {
 			@include getBootstrapBlock($type);
 		}
 	}
 	@if $type == 'md' {
-		@media (min-width: 768px) and (max-width: 991px) {
+		@media (min-width: 768px) {
 			@include getBootstrapBlock($type);
 		}
 	}
 	@if $type == 'lg' {
-		@media (min-width: 992px) and (max-width: 1199px) {
+		@media (min-width: 992px) {
 			@include getBootstrapBlock($type);
 		}
 	}
 	@if $type == 'xl' {
-		@media (min-width: 1200px) and (max-width: 1599px) {
+		@media (min-width: 1200px) {
 			@include getBootstrapBlock($type);
 		}
 	}
@@ -137,7 +137,6 @@ $offset_prefix: 'col-offset-';
 	}
 }
 .col {
-	width: 100%;
 	display: inline-flex;
 	align-items: center;
 	$class_prefix: 'col-';
