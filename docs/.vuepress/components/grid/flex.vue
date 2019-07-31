@@ -48,8 +48,8 @@
 	</div>
 </template>
 <script>
-import WRow from '../../../src/components/row';
-import WCol from '../../../src/components/col';
+import WRow from '../../../../src/components/row';
+import WCol from '../../../../src/components/col';
 export default {
 	name: 'GridFlex',
 	components: { WRow, WCol }

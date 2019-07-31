@@ -1,6 +1,6 @@
 <template>
 	<div class="demo">
-		<w-row>
+		<w-row gutter="8">
 			<w-col span="12">
 				<span>col-12</span>
 			</w-col>
@@ -8,7 +8,7 @@
 				<span>col-12</span>
 			</w-col>
 		</w-row>
-		<w-row>
+		<w-row gutter="16">
 			<w-col span="8">
 				<span>col-8</span>
 			</w-col>
@@ -19,7 +19,7 @@
 				<span>col-8</span>
 			</w-col>
 		</w-row>
-		<w-row>
+		<w-row gutter="32">
 			<w-col span="6">
 				<span>col-6</span>
 			</w-col>
@@ -36,10 +36,10 @@
 	</div>
 </template>
 <script>
-import WRow from '../../../src/components/row';
-import WCol from '../../../src/components/col';
+import WRow from '../../../../src/components/row';
+import WCol from '../../../../src/components/col';
 export default {
-	name: 'GridBasic',
+	name: 'GridGutter',
 	components: { WRow, WCol }
 };
 </script>
