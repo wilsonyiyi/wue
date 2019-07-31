@@ -5,7 +5,6 @@ addons:
     chrome: stable
 sudo: required
 script:
-	npm test
 	npm run docs:build
 before_script:
     - 'sudo chown root /opt/google/chrome/chrome-sandbox'
