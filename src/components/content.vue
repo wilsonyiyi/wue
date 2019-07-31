@@ -1,18 +1,17 @@
 <template>
-	<aside class="sider">
+	<main class="content">
 		<slot></slot>
-	</aside>
+	</main>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
-	name: 'WSider'
+	name: 'WContent'
 };
 </script>
 
 <style scoped lang="scss">
-.sider {
-	position: relative;
-	transition: all 0.2s;
+.content {
+	flex: 1;
 }
 </style>

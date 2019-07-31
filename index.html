@@ -35,107 +35,21 @@
 			}
 
 			.box {
-				margin-top: 20px;
-			}
 
-			.box-row {
-				margin: 5px 0;
 			}
 			.demo{
-				background: #ddd;
-				border: 1px solid #333;
-				height: 100px;
+				border: 1px solid #ccc;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div id="app" class="box">
-			<!--button component-->
-			<!--<w-button>-->
-			<!--无图标按钮-->
-			<!--</w-button>-->
-			<!--<w-button icon="setting">-->
-			<!--左图标按钮-->
-			<!--</w-button>-->
-			<!-- <w-button icon="setting" icon-position="right">
-				右图标按钮
-			</w-button> -->
-			<!--<w-button icon="setting" :loading="loading1" @click="loading1 = !loading1">-->
-			<!--点击切换loading-->
-			<!--</w-button>-->
-			<!--<div class="box">-->
-			<!--<w-button-group>-->
-			<!--<w-button icon="left">上一页</w-button>-->
-			<!--<w-button>更多</w-button>-->
-			<!--<w-button icon="right" icon-position="right">下一页</w-button>-->
-			<!--</w-button-group>-->
-			<!--</div>-->
-
-			<!-- input component -->
-			<!-- <div class="box">
-			<w-input value="张三"></w-input>
-			<w-input value="李四" readonly></w-input>
-			<w-input value="王五" disabled></w-input>
-			<w-input value="哈哈" error="出错啦！！！"></w-input>
-			</div>
-			<div class="box">
-			<w-input value="天王" @change="inputChange"></w-input>
-			</div> -->
-			<!--<div class="box">-->
-			<!--<w-input value="天王" error="请填写正确信息"></w-input>-->
-			<!--</div>-->
-			<!--<div class="box">-->
-			<!--<w-input v-model="message"></w-input>-->
-			<!--<span>{{message}}</span>-->
-			<!--</div>-->
-
-			<!-- 栅格系统 -->
-			<div class="box">
-				<!--<w-row class="box-row">-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--</w-row>-->
-				<!--<w-row class="box-row">-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--</w-row>-->
-				<!--<w-row class="box-row">-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--</w-row>-->
-				<!--<w-row class="box-row">-->
-				<!--<w-col span="2"></w-col>-->
-				<!--<w-col span="22"></w-col>-->
-				<!--</w-row>-->
-				<!--<w-row class="box-row">-->
-				<!--<w-col span="6"></w-col>-->
-				<!--<w-col span="7" offset="2"></w-col>-->
-				<!--<w-col span="7" offset="2"></w-col>-->
-				<!--</w-row>-->
-				<w-row class="box-row" gutter="16">
-					<w-col class="demo" :xs="{span: 24}" :sm="{span: 12}" :md="{span: 8}"></w-col>
-					<w-col class="demo" :xs="{span: 24}" :sm="{span: 12}" :md="{span: 8}"></w-col>
-					<w-col class="demo" :xs="{span: 24}" :sm="{span: 12}" :md="{span: 8}"></w-col>
-					<w-col class="demo" :xs="{span: 24}" :sm="{span: 12}" :md="{span: 8}"></w-col>
-					<w-col class="demo" :xs="{span: 24}" :sm="{span: 12}" :md="{span: 8}"></w-col>
-					<w-col class="demo" :xs="{span: 24}" :sm="{span: 12}" :md="{span: 8}"></w-col>
-				</w-row>
-				<!--<w-row class="box-row">-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--</w-row>-->
-				<!--<w-row class="box-row">-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--<w-col></w-col>-->
-				<!--</w-row>-->
-			</div>
+			<w-layout>
+				<w-header class="demo">header</w-header>
+				<w-content class="demo">content</w-content>
+				<w-footer class="demo">footer</w-footer>
+			</w-layout>
 		</div>
 		<script src="./src/app.js"></script>
 	</body>
