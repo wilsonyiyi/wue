@@ -157,6 +157,22 @@ Flex 子元素垂直对齐。
 </template>
 ```
 
+## 响应式
+
+参照 Bootstrap 的 [响应式设计](https://getbootstrap.com/docs/3.4/css/)，预设六个响应尺寸：`xs` `sm` `md` `lg` `xl` `xxl`。
+
+<ClientOnly>
+  <grid-bootstrap />
+</ClientOnly>
+
+```vue
+<w-row>
+	<w-col :xs="{span:24}" :sm="{span:4}" :md="{span:6}" :lg="{span: 8}" :xl="{span:10}"></w-col>
+	<w-col :xs="{span:24}" :sm="{span:16}" :md="{span:12}" :lg="{span: 8}" :xl="{span:4}"></w-col>
+	<w-col :xs="{span:24}" :sm="{span:4}" :md="{span:6}" :lg="{span: 8}" :xl="{span:10}"></w-col>
+</w-row>
+```
+
 ## API
 
 ### WRow
@@ -169,7 +185,13 @@ Flex 子元素垂直对齐。
 
 ### WCol
 
-| 属性   | 说明                                      | 类型          | 默认值 |
-| ------ | ----------------------------------------- | ------------- | ------ |
-| span   | 栅格占位格数，为 0 时相当于 display: none | string/number | -      |
-| offset | 栅格左侧的间隔格数，间隔内不可以有栅格    | string/number | 0      |
+| 属性   | 说明                                         | 类型          | 默认值 |
+| ------ | -------------------------------------------- | ------------- | ------ |
+| span   | 栅格占位格数，为 0 时相当于 display: none    | string/number | -      |
+| offset | 栅格左侧的间隔格数，间隔内不可以有栅格       | string/number | 0      |
+| xs     | `<576px` 响应式栅格，一个包含其他属性的对象  | object        | -      |
+| sm     | `≥576px` 响应式栅格，一个包含其他属性的对象  | object        | -      |
+| md     | `≥768px` 响应式栅格，一个包含其他属性的对象  | object        | -      |
+| lg     | `≥992px` 响应式栅格，一个包含其他属性的对象  | object        | -      |
+| xl     | `≥1200px` 响应式栅格，一个包含其他属性的对象 | object        | -      |
+| xxl    | `≥1600px` 响应式栅格，一个包含其他属性的对象 | object        | -      |
