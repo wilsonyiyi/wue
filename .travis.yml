@@ -4,18 +4,17 @@ node_js:
 addons:
     chrome: stable
 sudo: required
-script:
-	npm run docs:build
+script: npm run docs:build
 before_script:
     - 'sudo chown root /opt/google/chrome/chrome-sandbox'
     - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
 git:
-  depth: 10
+    depth: 10
 deploy:
     provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
     keep_history: true
-	local_dir: './docs/.vuepress/dist/'
+    local_dir: './docs/.vuepress/dist/'
     on:
         branch: master
