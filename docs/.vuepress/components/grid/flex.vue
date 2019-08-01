@@ -16,7 +16,7 @@
 			</w-col>
 		</w-row>
 		<p class="title">Align Center</p>
-		<w-row justify="space-around" align="center" :style="{height: '120px'}">
+		<w-row justify="space-around" align="middle" :style="{height: '120px'}">
 			<w-col span="4">
 				<span :style="{height: '100px', lineHeight: '100px'}">col-4</span>
 			</w-col>
