@@ -22,12 +22,13 @@ new Vue({
 		loading1: false,
 		message: 'test'
 	},
+	created() {
+		this.$toast('content');
+	},
 	methods: {
 		inputChange(e) {
 			console.log('TCL: inputChange -> e', e);
 		},
-		showMessage() {
-			this.$toast('hello world');
-		}
+		showMessage() {}
 	}
 });
