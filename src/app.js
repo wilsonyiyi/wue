@@ -5,6 +5,9 @@ import ButtonGroup from './components/button-group';
 import Input from './components/input';
 import Row from './components/row';
 import Col from './components/col';
+import plugin from './plugin';
+
+Vue.use(plugin);
 
 Vue.component('w-button', Button);
 Vue.component('w-icon', Icon);
@@ -22,6 +25,9 @@ new Vue({
 	methods: {
 		inputChange(e) {
 			console.log('TCL: inputChange -> e', e);
+		},
+		showMessage() {
+			this.$toast('hello world');
 		}
 	}
 });

@@ -1,13 +1,11 @@
 <template>
-	<div class="slot"></div>
+	<div class="toast">
+		<slot></slot>
+	</div>
 </template>
 <script>
 export default {
-	name: 'WToast',
-
-	data() {
-		return {};
-	}
+	name: 'WToast'
 };
 </script>
 <style lang="scss" scoped>
