@@ -23,7 +23,9 @@ new Vue({
 		message: 'test'
 	},
 	created() {
-		this.$toast('content');
+		this.$toast(
+			'黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货'
+		);
 	},
 	methods: {
 		inputChange(e) {
