@@ -1,5 +1,5 @@
 <template>
-	<div class="toast" ref="toast">
+	<div class="toast" :class="addClass()" ref="toast">
 		<slot v-if="!enableHtml"></slot>
 		<div v-else v-html="this.$slots.default"></div>
 		<template v-if="!closable">
@@ -10,6 +10,9 @@
 </template>
 <script>
 export default {
+	/**
+	 * 优化点：响应式、多个Toast顺序展示
+	 */
 	name: 'WToast',
 	props: {
 		enableHtml: {
@@ -33,19 +36,36 @@ export default {
 		},
 		onClose: {
 			type: Function
+		},
+		position: {
+			type: String,
+			default: 'top',
+			validator: val => ['top', 'center', 'bottom'].indexOf(val) >= 0
 		}
 	},
 	mounted() {
-		if (this.closable) {
-			setTimeout(() => {
-				this.close();
-			}, this.duration * 1000);
-		}
-		this.$nextTick(() => {
-			this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`;
-		});
+		this.updateLineHeight();
+		this.autoClose();
 	},
 	methods: {
+		addClass() {
+			return {
+				[`position-${this.position}`]: !!this.position
+			};
+		},
+		updateLineHeight() {
+			this.$nextTick(() => {
+				const toastHeight = this.$refs.toast.getBoundingClientRect().height;
+				this.$refs.line.style.height = `${toastHeight}px`;
+			});
+		},
+		autoClose() {
+			if (this.closable) {
+				setTimeout(() => {
+					this.close();
+				}, this.duration * 1000);
+			}
+		},
 		close() {
 			this.$el.remove();
 			this.afterClose && this.afterClose(); // 组件销毁时触发
@@ -67,7 +87,6 @@ $toast-border-radius: 5px;
 	display: flex;
 	align-items: center;
 	position: absolute;
-	top: 10px;
 	left: 50%;
 	transform: translateX(-50%);
 	color: #ffffff;
@@ -86,6 +105,16 @@ $toast-border-radius: 5px;
 	.line {
 		border-left: 1px solid #666;
 		margin-left: 16px;
+	}
+	&.position-top {
+		top: 10px;
+	}
+	&.position-center {
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&.position-bottom {
+		bottom: 10px;
 	}
 }
 </style>
