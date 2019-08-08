@@ -1,20 +1,29 @@
 import Toast from './components/toast';
 
+let toastCache;
+
 export default {
 	install: Vue => {
-		Vue.prototype.$toast = function(content) {
-			const Constructor = Vue.extend(Toast);
-			const vm = new Constructor({
-				propsData: {
-					closable: false,
-					enableHtml: true,
-					onClose: () => console.log('点击了关闭按钮'),
-					closeText: '关闭'
-				}
+		Vue.prototype.$toast = function(message, propsData) {
+			console.log('TCL: Vue.prototype.$toast -> propsData', propsData);
+			console.log('TCL: Vue.prototype.$toast -> toastCache', toastCache);
+			if (toastCache) {
+				toastCache.close();
+			}
+			toastCache = createToast({
+				Vue,
+				message,
+				propsData
 			});
-			vm.$slots.default = content;
-			vm.$mount();
-			document.body.appendChild(vm.$el);
 		};
 	}
 };
+
+function createToast({ Vue, message, propsData }) {
+	const Constructor = Vue.extend(Toast);
+	const vm = new Constructor({ propsData });
+	vm.$slots.default = message;
+	vm.$mount();
+	document.body.appendChild(vm.$el);
+	return vm;
+}

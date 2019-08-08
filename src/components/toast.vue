@@ -1,5 +1,5 @@
 <template>
-	<div class="toast" :class="addClass()" ref="toast">
+	<div class="toast" :class="toastClass" ref="toast">
 		<slot v-if="!enableHtml"></slot>
 		<div v-else v-html="this.$slots.default"></div>
 		<template v-if="!closable">
@@ -47,17 +47,24 @@ export default {
 		this.updateLineHeight();
 		this.autoClose();
 	},
-	methods: {
-		addClass() {
+	computed: {
+		toastClass() {
 			return {
 				[`position-${this.position}`]: !!this.position
 			};
-		},
+		}
+	},
+	methods: {
 		updateLineHeight() {
-			this.$nextTick(() => {
-				const toastHeight = this.$refs.toast.getBoundingClientRect().height;
-				this.$refs.line.style.height = `${toastHeight}px`;
-			});
+			if (!this.closable) {
+				this.$nextTick(() => {
+					const toastHeight = this.$refs.toast.getBoundingClientRect().height;
+					const { paddingTop, paddingBottom } = window.getComputedStyle(this.$refs.toast);
+					this.$refs.line.style.height = `${toastHeight -
+						parseInt(paddingTop) -
+						parseInt(paddingBottom)}px`;
+				});
+			}
 		},
 		autoClose() {
 			if (this.closable) {

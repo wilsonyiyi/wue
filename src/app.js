@@ -22,15 +22,15 @@ new Vue({
 		loading1: false,
 		message: 'test'
 	},
-	created() {
-		this.$toast(
-			'黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货黄飞鸿的沙发等哈哈收到货'
-		);
-	},
+	created() {},
 	methods: {
 		inputChange(e) {
 			console.log('TCL: inputChange -> e', e);
 		},
-		showMessage() {}
+		showMessage() {
+			this.$toast(`黄飞鸿的沙发${parseInt(Math.random() * 100)}等哈哈收到货黄`, {
+				closable: true
+			});
+		}
 	}
 });
