@@ -5,11 +5,10 @@ let toastCache;
 export default {
 	install: Vue => {
 		Vue.prototype.$toast = function(message, propsData) {
-			console.log('TCL: Vue.prototype.$toast -> propsData', propsData);
-			console.log('TCL: Vue.prototype.$toast -> toastCache', toastCache);
 			if (toastCache) {
 				toastCache.close();
 			}
+
 			toastCache = createToast({
 				Vue,
 				message,
@@ -24,6 +23,9 @@ function createToast({ Vue, message, propsData }) {
 	const vm = new Constructor({ propsData });
 	vm.$slots.default = message;
 	vm.$mount();
+	vm.$on('close', () => {
+		toastCache = null;
+	});
 	document.body.appendChild(vm.$el);
 	return vm;
 }

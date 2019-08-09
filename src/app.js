@@ -29,7 +29,8 @@ new Vue({
 		},
 		showMessage() {
 			this.$toast(`黄飞鸿的沙发${parseInt(Math.random() * 100)}等哈哈收到货黄`, {
-				closable: true
+				closable: false,
+				position: 'bottom'
 			});
 		}
 	}

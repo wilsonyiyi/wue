@@ -1,11 +1,13 @@
 <template>
-	<div class="toast" :class="toastClass" ref="toast">
-		<slot v-if="!enableHtml"></slot>
-		<div v-else v-html="this.$slots.default"></div>
-		<template v-if="!closable">
-			<div class="line" ref="line"></div>
-			<span class="closeBtn" @click="closeBtnClick">{{closeText}}</span>
-		</template>
+	<div class="outer" :class="toastClass">
+		<div class="inner" ref="toast">
+			<slot v-if="!enableHtml"></slot>
+			<div v-else v-html="this.$slots.default"></div>
+			<template v-if="!closable">
+				<div class="line" ref="line"></div>
+				<span class="closeBtn" @click="closeBtnClick">{{closeText}}</span>
+			</template>
+		</div>
 	</div>
 </template>
 <script>
@@ -76,6 +78,7 @@ export default {
 		close() {
 			this.$el.remove();
 			this.afterClose && this.afterClose(); // 组件销毁时触发
+			this.$emit('close');
 			this.$destroy();
 		},
 		closeBtnClick() {
@@ -90,38 +93,52 @@ $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.7);
 $toast-border-radius: 5px;
-.toast {
-	display: flex;
-	align-items: center;
+.outer {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	color: #ffffff;
-	min-height: $toast-min-height;
-	padding: 8px 16px;
-	background: $toast-bg;
-	border-radius: $toast-border-radius;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	.closeBtn {
-		padding-left: 16px;
-		flex-shrink: 0;
-		line-height: 40px;
-		cursor: pointer;
-		user-select: none;
-	}
-	.line {
-		border-left: 1px solid #666;
-		margin-left: 16px;
-	}
+	animation: fade 0.8s;
 	&.position-top {
-		top: 10px;
+		top: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
 	&.position-center {
 		top: 50%;
 		transform: translate(-50%, -50%);
 	}
 	&.position-bottom {
-		bottom: 10px;
+		bottom: 0;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.inner {
+		display: flex;
+		align-items: center;
+		font-size: $font-size;
+		color: #ffffff;
+		min-height: $toast-min-height;
+		padding: 8px 16px;
+		background: $toast-bg;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		.closeBtn {
+			padding-left: 16px;
+			flex-shrink: 0;
+			cursor: pointer;
+			user-select: none;
+		}
+		.line {
+			border-left: 1px solid #666;
+			margin-left: 16px;
+		}
+	}
+}
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 </style>
