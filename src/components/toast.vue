@@ -48,6 +48,7 @@ export default {
 	mounted() {
 		this.updateLineHeight();
 		this.autoClose();
+		this.updateClosable();
 	},
 	computed: {
 		toastClass() {
@@ -84,6 +85,12 @@ export default {
 		closeBtnClick() {
 			this.onClose && this.onClose();
 			this.close();
+		},
+		updateClosable() {
+			// 设置了点击关闭回调时，将默认设置toast为手动关闭模式
+			if (this.onClose) {
+				this.closable = false;
+			}
 		}
 	}
 };
