@@ -100,7 +100,7 @@ export default {
 
 <script>
 import WButton from '../../../../src/components/button';
-export default { v'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+export default {
 	components: { WButton },
 	methods: {
 		showCallback() {
