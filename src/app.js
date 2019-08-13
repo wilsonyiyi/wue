@@ -28,10 +28,15 @@ new Vue({
 			console.log('TCL: inputChange -> e', e);
 		},
 		showMessage() {
-			this.$toast(`黄飞鸿的沙发${parseInt(Math.random() * 100)}等哈哈收到货黄`, {
-				closable: false,
-				position: 'bottom'
-			});
+			this.$toast(
+				`黄飞鸿的沙发${parseInt(Math.random() * 100)}等哈哈收到货黄<i>呵呵呵呵呵</i
+			>`,
+				{
+					enableHtml: true,
+					closable: false,
+					position: 'center'
+				}
+			);
 		}
 	}
 });

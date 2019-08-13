@@ -101,9 +101,11 @@ $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.7);
 $toast-border-radius: 5px;
 $animate-duration: 0.5s;
+$z-index: 1000;
 .outer {
 	position: fixed;
 	left: 50%;
+	z-index: $z-index;
 	transform: translate(-50%, -50%);
 	&.position-top {
 		top: 0;
