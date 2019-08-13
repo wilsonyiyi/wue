@@ -106,9 +106,9 @@ $z-index: 1000;
 	position: fixed;
 	left: 50%;
 	z-index: $z-index;
-	transform: translate(-50%, -50%);
 	&.position-top {
 		top: 0;
+		transform: translateX(-50%);
 		.inner {
 			animation: slide-down $animate-duration;
 			border-top-left-radius: 0;
@@ -117,12 +117,14 @@ $z-index: 1000;
 	}
 	&.position-center {
 		top: 50%;
+		transform: translate(-50%, -50%);
 		.inner {
 			animation: slide-down $animate-duration;
 		}
 	}
 	&.position-bottom {
 		bottom: 0;
+		transform: translateX(-50%);
 		.inner {
 			animation: slide-up $animate-duration;
 			border-bottom-left-radius: 0;
