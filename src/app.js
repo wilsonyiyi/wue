@@ -6,6 +6,7 @@ import Input from './components/input';
 import Row from './components/row';
 import Col from './components/col';
 import plugin from './plugin';
+import Poptip from './components/poptip';
 
 Vue.use(plugin);
 
@@ -15,28 +16,13 @@ Vue.component('w-button-group', ButtonGroup);
 Vue.component('w-input', Input);
 Vue.component('w-row', Row);
 Vue.component('w-col', Col);
+Vue.component('w-poptip', Poptip);
 
 new Vue({
 	el: '#app',
-	data: {
-		loading1: false,
-		message: 'test'
-	},
-	created() {},
 	methods: {
-		inputChange(e) {
-			console.log('TCL: inputChange -> e', e);
-		},
-		showMessage() {
-			this.$toast(
-				`黄飞鸿的沙发${parseInt(Math.random() * 100)}等哈哈收到货黄<i>呵呵呵呵呵</i
-			>`,
-				{
-					enableHtml: true,
-					closable: false,
-					position: 'center'
-				}
-			);
+		click() {
+			// console.log('111');
 		}
 	}
 });
