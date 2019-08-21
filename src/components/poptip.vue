@@ -1,9 +1,9 @@
 <template>
-	<div @click="onClick">
+	<div ref="poptipRef">
 		<div v-if="visible" ref="contentRef" class="content-wrap">
 			<slot name="content"></slot>
 		</div>
-		<div ref="triggerRef" class="trigger-wrap">
+		<div ref="triggerRef" class="trigger-wrap" @click="onClick">
 			<slot></slot>
 		</div>
 	</div>
@@ -17,32 +17,37 @@ export default {
 		};
 	},
 	methods: {
+		onClickDocument({ target }) {
+			const { poptipRef, contentRef, triggerRef } = this.$refs;
+			if (poptipRef === target || contentRef.contains(target) || triggerRef.contains(target))
+				return;
+			this.close();
+		},
+		close() {
+			this.visible = false;
+			document.removeEventListener('click', this.onClickDocument);
+		},
+		open() {
+			this.visible = true;
+			this.$nextTick(() => {
+				this.moveContentWrapToBody();
+			});
+			document.addEventListener('click', this.onClickDocument);
+		},
 		onClick(event) {
 			// vue 2.6.10版本，元素被移除组件时，元素不会冒泡到原父元素
-			//!bug click关闭时需要移除document上的事件绑定
-			this.visible = !this.visible;
-			if (this.visible) {
-				this.$nextTick(() => {
-					this.moveContentWrap();
-					this.setVisibleWithDocument();
-				});
+			if (this.visible === true) {
+				this.close();
+			} else {
+				this.open();
 			}
 		},
-		moveContentWrap() {
+		moveContentWrapToBody() {
 			const { contentRef, triggerRef } = this.$refs;
 			const { width, height, top, left } = triggerRef.getBoundingClientRect();
 			contentRef.style.left = left + window.scrollX + 'px';
 			contentRef.style.top = top + window.scrollY + 'px';
 			document.body.appendChild(contentRef);
-		},
-		setVisibleWithDocument() {
-			const { contentRef, triggerRef } = this.$refs;
-			const eventHandler = ({ target }) => {
-				if (triggerRef.contains(target) || contentRef.contains(target)) return;
-				this.visible = false;
-				document.removeEventListener('click', eventHandler);
-			};
-			document.addEventListener('click', eventHandler);
 		}
 	}
 };
